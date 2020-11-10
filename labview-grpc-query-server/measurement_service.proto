@@ -1,0 +1,134 @@
+//---------------------------------------------------------------------
+// Copyright 2020 National Instruments
+//
+// Licensed under the MIT License;
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     https://mit-license.org/
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+//---------------------------------------------------------------------
+
+//---------------------------------------------------------------------
+//---------------------------------------------------------------------
+syntax = "proto3";
+
+//---------------------------------------------------------------------
+//---------------------------------------------------------------------
+option java_multiple_files = true;
+option java_package = "labview.measurementservice";
+option java_outer_classname = "MeasurementService";
+option objc_class_prefix = "LVMS";
+
+//---------------------------------------------------------------------
+//---------------------------------------------------------------------
+package measurementservice;
+
+//---------------------------------------------------------------------
+// The MeasurementService service definition.
+//---------------------------------------------------------------------
+service MeasurementService {
+  
+  rpc Invoke (InvokeRequest) returns (InvokeResponse) {}
+  
+  rpc Query (QueryRequest) returns (QueryResponse) {}
+  
+  rpc PerformOCVMeasurement (OCVRequest) returns (OCVData) {}
+
+  rpc StreamOCVMeasurement (OCVRequest) returns (stream OCVRaw) {}
+
+  rpc Register (RegistrationRequest) returns (stream ServerEvent) {}
+}
+
+//---------------------------------------------------------------------
+//---------------------------------------------------------------------
+message ErrorOut {
+  int32 errCode = 1;
+  string errMessage = 2;
+}
+
+//---------------------------------------------------------------------
+//---------------------------------------------------------------------
+message OCVRaw {
+  float battery1voltage = 1;
+  float battery2voltage = 2;
+  float battery3voltage = 3;
+  float battery4voltage = 4;
+  float battery5voltage = 5;
+  float battery6voltage = 6;
+  float battery7voltage = 7;
+  float battery8voltage = 8;
+  float battery9voltage = 9;
+  float battery10voltage = 10;
+  float battery11voltage = 11;
+  float battery12voltage = 12;
+  float battery13voltage = 13;
+  float battery14voltage = 14;
+  float battery15voltage = 15;
+  float battery16voltage = 16;
+  float battery17voltage = 17;
+  float battery18voltage = 18;
+  float battery19voltage = 19;
+  float battery20voltage = 20;
+  float battery21voltage = 21;
+  float battery22voltage = 22;
+  float battery23voltage = 23;
+  float battery24voltage = 24;
+  ErrorOut error = 25;
+}
+
+//---------------------------------------------------------------------
+//---------------------------------------------------------------------
+message OCVData {
+  repeated OCVRaw data = 1;
+}
+
+//---------------------------------------------------------------------
+//---------------------------------------------------------------------
+message OCVRequest {
+}
+
+//---------------------------------------------------------------------
+//---------------------------------------------------------------------
+message InvokeRequest {
+  string command = 1;
+  string parameter = 2;
+}
+
+//---------------------------------------------------------------------
+//---------------------------------------------------------------------
+message InvokeResponse {
+  int32 status = 1;
+}
+
+//---------------------------------------------------------------------
+//---------------------------------------------------------------------
+message QueryRequest {
+  string query = 1;
+}
+
+//---------------------------------------------------------------------
+//---------------------------------------------------------------------
+message QueryResponse {
+  string message = 1;
+  int32 status = 2;
+}
+
+//---------------------------------------------------------------------
+//---------------------------------------------------------------------
+message RegistrationRequest {
+  string eventName = 1;
+}
+
+//---------------------------------------------------------------------
+//---------------------------------------------------------------------
+message ServerEvent {
+  string eventData = 1;
+  int32 serverId = 2;
+  int32 status = 3;
+}
