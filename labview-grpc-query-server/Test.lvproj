@@ -94,6 +94,7 @@ AddOutputFilter chunkFilter
 		<Property Name="target.webservices.ValidTimestampWindow" Type="Int">15</Property>
 		<Item Name="ExampleMeasurementServer.vi" Type="VI" URL="../ExampleMeasurementServer.vi"/>
 		<Item Name="OCV Histogram 4309.vi" Type="VI" URL="../OCV Histogram 4309.vi"/>
+		<Item Name="OCV Stream Asynchronous.vi" Type="VI" URL="../../OCV Stream Asynchronous.vi"/>
 		<Item Name="OCV_Chart_Graph_Mean_Range_StdDev.ctl" Type="VI" URL="../../OCV_Chart_Graph_Mean_Range_StdDev.ctl"/>
 		<Item Name="ocv_labview_measurement_server.so" Type="Document" URL="../ocv_labview_measurement_server.so"/>
 		<Item Name="Simulate Gatling Gun.vi" Type="VI" URL="../Simulate Gatling Gun.vi"/>
@@ -256,6 +257,7 @@ AddOutputFilter chunkFilter
 				<Item Name="subElapsedTime.vi" Type="VI" URL="/&lt;vilib&gt;/express/express execution control/ElapsedTimeBlock.llb/subElapsedTime.vi"/>
 			</Item>
 			<Item Name="Chart_Graph_Mean_Range_StdDev.ctl" Type="VI" URL="../../Chart_Graph_Mean_Range_StdDev.ctl"/>
+			<Item Name="Global Operations.ctl" Type="VI" URL="../../Global Operations.ctl"/>
 			<Item Name="labview-grpc-measurement-server.lvlib" Type="Library" URL="../VIs/labview-grpc-measurement-server.lvlib"/>
 			<Item Name="lvanlys.dll" Type="Document" URL="/&lt;resource&gt;/lvanlys.dll"/>
 			<Item Name="nilvaiu.dll" Type="Document" URL="nilvaiu.dll">
@@ -263,13 +265,12 @@ AddOutputFilter chunkFilter
 			</Item>
 			<Item Name="OCV Clear Acquisition.vi" Type="VI" URL="../OCV Clear Acquisition.vi"/>
 			<Item Name="OCV Configure Acquisition.vi" Type="VI" URL="../OCV Configure Acquisition.vi"/>
-			<Item Name="OCV DAQ Software Trigger.vi" Type="VI" URL="../OCV DAQ Software Trigger.vi"/>
 			<Item Name="OCV Measure.vi" Type="VI" URL="../OCV Measure.vi"/>
-			<Item Name="OCV Send GUN Trigger.vi" Type="VI" URL="../OCV Send GUN Trigger.vi"/>
 			<Item Name="ocv_labview_measurement_server.so" Type="Document" URL="/home/lvuser/ocv_labview_measurement_server.so"/>
 			<Item Name="OCVResults.ctl" Type="VI" URL="../../OCVResults.ctl"/>
 			<Item Name="Simulate Angular Position.vi" Type="VI" URL="../Simulate Angular Position.vi"/>
 			<Item Name="Simulate Gun Software Trigger.vi" Type="VI" URL="../Simulate Gun Software Trigger.vi"/>
+			<Item Name="stopstream.vi" Type="VI" URL="../../stopstream.vi"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
 			<Item Name="My Real-Time Application" Type="{69A947D5-514E-4E75-818E-69657C0547D8}">
@@ -288,7 +289,7 @@ AddOutputFilter chunkFilter
 				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
 				<Property Name="Bld_previewCacheID" Type="Str">{EFAE68E7-3ACA-4E03-B0EA-CC4C7321EBFB}</Property>
 				<Property Name="Bld_targetDestDir" Type="Path">/home/lvuser/natinst/bin</Property>
-				<Property Name="Bld_version.build" Type="Int">21</Property>
+				<Property Name="Bld_version.build" Type="Int">23</Property>
 				<Property Name="Bld_version.major" Type="Int">1</Property>
 				<Property Name="Destination[0].destName" Type="Str">startup.rtexe</Property>
 				<Property Name="Destination[0].path" Type="Path">/home/lvuser/natinst/bin/startup.rtexe</Property>
@@ -299,13 +300,17 @@ AddOutputFilter chunkFilter
 				<Property Name="Destination[1].path" Type="Path">/home/lvuser/natinst/bin/data</Property>
 				<Property Name="Destination[1].path.type" Type="Str">&lt;none&gt;</Property>
 				<Property Name="DestinationCount" Type="Int">2</Property>
-				<Property Name="Source[0].itemID" Type="Str">{D18E38AE-4A23-4287-82B0-166F24E04DD1}</Property>
+				<Property Name="Source[0].itemID" Type="Str">{E1D36B62-76F3-4C19-823A-2F8DD423E63D}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[1].itemID" Type="Ref">/NI-PXIe-8840Quad-Core-031036AB/ExampleMeasurementServer.vi</Property>
 				<Property Name="Source[1].sourceInclusion" Type="Str">TopLevel</Property>
 				<Property Name="Source[1].type" Type="Str">VI</Property>
-				<Property Name="SourceCount" Type="Int">2</Property>
+				<Property Name="Source[2].destinationIndex" Type="Int">1</Property>
+				<Property Name="Source[2].itemID" Type="Ref">/NI-PXIe-8840Quad-Core-031036AB/OCV Stream Asynchronous.vi</Property>
+				<Property Name="Source[2].sourceInclusion" Type="Str">Include</Property>
+				<Property Name="Source[2].type" Type="Str">VI</Property>
+				<Property Name="SourceCount" Type="Int">3</Property>
 				<Property Name="TgtF_companyName" Type="Str">National Instruments</Property>
 				<Property Name="TgtF_fileDescription" Type="Str">My Real-Time Application</Property>
 				<Property Name="TgtF_internalName" Type="Str">My Real-Time Application</Property>
@@ -316,7 +321,7 @@ AddOutputFilter chunkFilter
 				<Property Name="TgtF_versionIndependent" Type="Bool">true</Property>
 			</Item>
 			<Item Name="OCV Package" Type="{CED73189-3D7D-4B2F-B6C9-EA03FBC59E14}">
-				<Property Name="IPK_lastBuiltPackage" Type="Str">ocv_1.0.0-6_x64.ipk</Property>
+				<Property Name="IPK_lastBuiltPackage" Type="Str">ocv_1.0.0-8_x64.ipk</Property>
 				<Property Name="IPK_startup.Restart" Type="Bool">true</Property>
 				<Property Name="IPK_startup.Target.Child" Type="Str">{53F90B9F-493D-4CD8-8BD1-B24EB007D9E8}</Property>
 				<Property Name="IPK_startup.Target.Destination" Type="Str">root_0</Property>
@@ -324,7 +329,7 @@ AddOutputFilter chunkFilter
 				<Property Name="PKG_actions.Count" Type="Int">0</Property>
 				<Property Name="PKG_autoIncrementBuild" Type="Bool">true</Property>
 				<Property Name="PKG_autoSelectDeps" Type="Bool">false</Property>
-				<Property Name="PKG_buildNumber" Type="Int">7</Property>
+				<Property Name="PKG_buildNumber" Type="Int">9</Property>
 				<Property Name="PKG_buildSpecName" Type="Str">OCV Package</Property>
 				<Property Name="PKG_dependencies.Count" Type="Int">0</Property>
 				<Property Name="PKG_description" Type="Str">This package runs the OCV test</Property>
@@ -339,7 +344,7 @@ AddOutputFilter chunkFilter
 				<Property Name="PKG_output" Type="Path">../builds/NI_AB_PROJECTNAME/NI_AB_TARGETNAME/OCV Package/Package</Property>
 				<Property Name="PKG_output.Type" Type="Str">relativeToCommon</Property>
 				<Property Name="PKG_packageName" Type="Str">ocv</Property>
-				<Property Name="PKG_publishToSystemLink" Type="Bool">true</Property>
+				<Property Name="PKG_publishToSystemLink" Type="Bool">false</Property>
 				<Property Name="PKG_section" Type="Str">Application Software</Property>
 				<Property Name="PKG_shortcuts.Count" Type="Int">0</Property>
 				<Property Name="PKG_sources.Count" Type="Int">2</Property>

@@ -193,6 +193,9 @@ int main(int argc, char **argv)
     auto channel = grpc::CreateChannel(target_str, creds);
     QueryClient client(channel);
 
+    auto period = client.Query("samplingperiod:100");
+    cout << "Sampling period: " << period << endl;
+
     auto result = client.Query("Uptime");
     cout << "Server uptime: " << result << endl;
 
@@ -248,11 +251,16 @@ int main(int argc, char **argv)
         cout << "First OCV Results: "  << endl;
         while (measurementReader->Read(&data))
         {
-            if (++x <= 10)
+            if (++x <= 50000)
             {
                 cout << "  V1:" << data.battery1voltage() << " V2:" << data.battery2voltage() << " V3:" << data.battery3voltage() << " V4:" << data.battery4voltage() << " V5:" << data.battery5voltage() << " V6:" << data.battery6voltage() << endl;
             }
+			else
+			{
+				break;
+			}
         }
+		client.Invoke("stopstream", "");
         auto endTime = chrono::steady_clock::now();
         auto elapsed = chrono::duration_cast<chrono::milliseconds>(endTime - startTime);
         cout << "OCV measurement took: " << elapsed.count() << " milliseconds" << endl;
