@@ -251,7 +251,7 @@ int main(int argc, char **argv)
         cout << "First OCV Results: "  << endl;
         while (measurementReader->Read(&data))
         {
-            if (++x <= 50000)
+            if (++x <= 500)
             {
                 cout << "  V1:" << data.battery1voltage() << " V2:" << data.battery2voltage() << " V3:" << data.battery3voltage() << " V4:" << data.battery4voltage() << " V5:" << data.battery5voltage() << " V6:" << data.battery6voltage() << endl;
             }
