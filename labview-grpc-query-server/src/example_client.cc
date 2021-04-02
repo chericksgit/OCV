@@ -193,7 +193,7 @@ int main(int argc, char **argv)
     auto channel = grpc::CreateChannel(target_str, creds);
     QueryClient client(channel);
 
-    auto period = client.Query("samplingperiod:100");
+/*    auto period = client.Query("samplingperiod:100");
     cout << "Sampling period: " << period << endl;
 
     auto result = client.Query("Uptime");
@@ -213,8 +213,8 @@ int main(int argc, char **argv)
     }
     Status status = reader->Finish();
     cout << "Server notifications complete" << endl;
-
-	auto iterations = client.Query("numiterations:20");
+*/
+	auto iterations = client.Query("numiterations:1");
     cout << "numiterations: " << iterations << endl;
 
     cout << "Performing OCV measurement" << endl;
@@ -233,14 +233,14 @@ int main(int argc, char **argv)
         int x=0;
         for (auto it = measurements.begin();  it != measurements.end(); ++it)
         {
-            cout << "  V1:" << (*it).battery1voltage() << " V2:" << (*it).battery2voltage() << " V3:" << (*it).battery3voltage() << " V4:" << (*it).battery4voltage() << " V5:" << (*it).battery5voltage() << " V6:" << (*it).battery6voltage() << endl;
-            if (++x == 10)
+            cout << "  V1:" << (*it).battery1voltage() << endl;
+            if (++x == 20)
             {
                 break;
             }
         }
     }
-    cout << "Performing Streaming OCV measurement" << endl;
+/*    cout << "Performing Streaming OCV measurement" << endl;
     {
         auto startTime = chrono::steady_clock::now();
         ClientContext ctx;
@@ -265,5 +265,5 @@ int main(int argc, char **argv)
         auto elapsed = chrono::duration_cast<chrono::milliseconds>(endTime - startTime);
         cout << "OCV measurement took: " << elapsed.count() << " milliseconds" << endl;
         cout << "Received " << x << " measurements." << endl;
-    }
+    }*/
 }

@@ -39,6 +39,8 @@ service MeasurementService {
   rpc Query (QueryRequest) returns (QueryResponse) {}
   
   rpc PerformOCVMeasurement (OCVRequest) returns (OCVData) {}
+  
+  rpc PerformACIRMeasurement (ACIRRequest) returns (ACIRData) {}
 
   rpc StreamOCVMeasurement (OCVRequest) returns (stream OCVRaw) {}
 
@@ -91,6 +93,26 @@ message OCVData {
 //---------------------------------------------------------------------
 //---------------------------------------------------------------------
 message OCVRequest {
+}
+
+//---------------------------------------------------------------------
+//---------------------------------------------------------------------
+message ACIRRaw {
+  float Impedance = 1;
+  float Real = 2;
+  float Imaginery = 3;
+  ErrorOut error = 4;
+}
+
+//---------------------------------------------------------------------
+//---------------------------------------------------------------------
+message ACIRData {
+  repeated ACIRRaw data = 1;
+}
+
+//---------------------------------------------------------------------
+//---------------------------------------------------------------------
+message ACIRRequest {
 }
 
 //---------------------------------------------------------------------

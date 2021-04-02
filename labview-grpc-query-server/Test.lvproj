@@ -13,9 +13,9 @@
 		<Item Name="Dependencies" Type="Dependencies"/>
 		<Item Name="Build Specifications" Type="Build"/>
 	</Item>
-	<Item Name="NI-PXIe-8840Quad-Core-031036AB" Type="RT PXI Chassis">
-		<Property Name="alias.name" Type="Str">NI-PXIe-8840Quad-Core-031036AB</Property>
-		<Property Name="alias.value" Type="Str">10.0.0.202</Property>
+	<Item Name="NI-PXIe-8821-032055AA" Type="RT PXI Chassis">
+		<Property Name="alias.name" Type="Str">NI-PXIe-8821-032055AA</Property>
+		<Property Name="alias.value" Type="Str">10.61.1.49</Property>
 		<Property Name="CCSymbols" Type="Str">TARGET_TYPE,RT;OS,Linux;CPU,x64;</Property>
 		<Property Name="host.ResponsivenessCheckEnabled" Type="Bool">true</Property>
 		<Property Name="host.ResponsivenessCheckPingDelay" Type="UInt">5000</Property>
@@ -94,6 +94,15 @@ AddOutputFilter chunkFilter
 		<Item Name="OCV Stream Asynchronous.vi" Type="VI" URL="../../OCV Stream Asynchronous.vi"/>
 		<Item Name="ocv_labview_measurement_server.so" Type="Document" URL="../ocv_labview_measurement_server.so"/>
 		<Item Name="Dependencies" Type="Dependencies">
+			<Item Name="instr.lib" Type="Folder">
+				<Item Name="niDMM Abort.vi" Type="VI" URL="/&lt;instrlib&gt;/niDMM/nidmm.llb/niDMM Abort.vi"/>
+				<Item Name="niDMM Close.vi" Type="VI" URL="/&lt;instrlib&gt;/niDMM/nidmm.llb/niDMM Close.vi"/>
+				<Item Name="niDMM Control Actions.ctl" Type="VI" URL="/&lt;instrlib&gt;/niDMM/nidmm.llb/niDMM Control Actions.ctl"/>
+				<Item Name="niDMM Control.vi" Type="VI" URL="/&lt;instrlib&gt;/niDMM/nidmm.llb/niDMM Control.vi"/>
+				<Item Name="niDMM Initialize.vi" Type="VI" URL="/&lt;instrlib&gt;/niDMM/nidmm.llb/niDMM Initialize.vi"/>
+				<Item Name="niDMM IVI Error Converter.vi" Type="VI" URL="/&lt;instrlib&gt;/niDMM/nidmm.llb/niDMM IVI Error Converter.vi"/>
+				<Item Name="niDMM Read.vi" Type="VI" URL="/&lt;instrlib&gt;/niDMM/nidmm.llb/niDMM Read.vi"/>
+			</Item>
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="DAQmx Clear Task.vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/configure/task.llb/DAQmx Clear Task.vi"/>
 				<Item Name="DAQmx Control Task.vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/configure/task.llb/DAQmx Control Task.vi"/>
@@ -246,11 +255,17 @@ AddOutputFilter chunkFilter
 			</Item>
 			<Item Name="Global Operations.ctl" Type="VI" URL="../../Global Operations.ctl"/>
 			<Item Name="labview-grpc-measurement-server.lvlib" Type="Library" URL="../VIs/labview-grpc-measurement-server.lvlib"/>
+			<Item Name="nidmm_32.dll" Type="Document" URL="nidmm_32.dll">
+				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
+			</Item>
 			<Item Name="nilvaiu.dll" Type="Document" URL="nilvaiu.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
 			<Item Name="OCV Clear Acquisition.vi" Type="VI" URL="../OCV Clear Acquisition.vi"/>
 			<Item Name="OCV Configure Acquisition.vi" Type="VI" URL="../OCV Configure Acquisition.vi"/>
+			<Item Name="OCV DMM Clear Acquisition.vi" Type="VI" URL="../OCV DMM Clear Acquisition.vi"/>
+			<Item Name="OCV DMM Configure Acquisition.vi" Type="VI" URL="../OCV DMM Configure Acquisition.vi"/>
+			<Item Name="OCV DMM Measure.vi" Type="VI" URL="../OCV DMM Measure.vi"/>
 			<Item Name="OCV Measure.vi" Type="VI" URL="../OCV Measure.vi"/>
 			<Item Name="ocv_labview_measurement_server.so" Type="Document" URL="/home/lvuser/ocv_labview_measurement_server.so"/>
 			<Item Name="stopstream.vi" Type="VI" URL="../../stopstream.vi"/>
@@ -272,7 +287,7 @@ AddOutputFilter chunkFilter
 				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
 				<Property Name="Bld_previewCacheID" Type="Str">{EFAE68E7-3ACA-4E03-B0EA-CC4C7321EBFB}</Property>
 				<Property Name="Bld_targetDestDir" Type="Path">/home/lvuser/natinst/bin</Property>
-				<Property Name="Bld_version.build" Type="Int">29</Property>
+				<Property Name="Bld_version.build" Type="Int">31</Property>
 				<Property Name="Bld_version.major" Type="Int">1</Property>
 				<Property Name="Destination[0].destName" Type="Str">startup.rtexe</Property>
 				<Property Name="Destination[0].path" Type="Path">/home/lvuser/natinst/bin/startup.rtexe</Property>
@@ -286,11 +301,11 @@ AddOutputFilter chunkFilter
 				<Property Name="Source[0].itemID" Type="Str">{E1D36B62-76F3-4C19-823A-2F8DD423E63D}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[1].itemID" Type="Ref">/NI-PXIe-8840Quad-Core-031036AB/ExampleMeasurementServer.vi</Property>
+				<Property Name="Source[1].itemID" Type="Ref">/NI-PXIe-8821-032055AA/ExampleMeasurementServer.vi</Property>
 				<Property Name="Source[1].sourceInclusion" Type="Str">TopLevel</Property>
 				<Property Name="Source[1].type" Type="Str">VI</Property>
 				<Property Name="Source[2].destinationIndex" Type="Int">1</Property>
-				<Property Name="Source[2].itemID" Type="Ref">/NI-PXIe-8840Quad-Core-031036AB/OCV Stream Asynchronous.vi</Property>
+				<Property Name="Source[2].itemID" Type="Ref">/NI-PXIe-8821-032055AA/OCV Stream Asynchronous.vi</Property>
 				<Property Name="Source[2].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[2].type" Type="Str">VI</Property>
 				<Property Name="SourceCount" Type="Int">3</Property>
@@ -304,15 +319,15 @@ AddOutputFilter chunkFilter
 				<Property Name="TgtF_versionIndependent" Type="Bool">true</Property>
 			</Item>
 			<Item Name="OCV Package" Type="{CED73189-3D7D-4B2F-B6C9-EA03FBC59E14}">
-				<Property Name="IPK_lastBuiltPackage" Type="Str">ocv_1.0.0-14_x64.ipk</Property>
+				<Property Name="IPK_lastBuiltPackage" Type="Str">ocv_1.0.0-16_x64.ipk</Property>
 				<Property Name="IPK_startup.Restart" Type="Bool">true</Property>
 				<Property Name="IPK_startup.Target.Child" Type="Str">{53F90B9F-493D-4CD8-8BD1-B24EB007D9E8}</Property>
 				<Property Name="IPK_startup.Target.Destination" Type="Str">root_0</Property>
-				<Property Name="IPK_startup.Target.Source" Type="Ref">/NI-PXIe-8840Quad-Core-031036AB/Build Specifications/My Real-Time Application</Property>
+				<Property Name="IPK_startup.Target.Source" Type="Ref">/NI-PXIe-8821-032055AA/Build Specifications/My Real-Time Application</Property>
 				<Property Name="PKG_actions.Count" Type="Int">0</Property>
 				<Property Name="PKG_autoIncrementBuild" Type="Bool">true</Property>
 				<Property Name="PKG_autoSelectDeps" Type="Bool">false</Property>
-				<Property Name="PKG_buildNumber" Type="Int">15</Property>
+				<Property Name="PKG_buildNumber" Type="Int">17</Property>
 				<Property Name="PKG_buildSpecName" Type="Str">OCV Package</Property>
 				<Property Name="PKG_dependencies.Count" Type="Int">0</Property>
 				<Property Name="PKG_description" Type="Str">This package runs the OCV test</Property>
@@ -327,15 +342,15 @@ AddOutputFilter chunkFilter
 				<Property Name="PKG_output" Type="Path">../builds/NI_AB_PROJECTNAME/NI_AB_TARGETNAME/OCV Package/Package</Property>
 				<Property Name="PKG_output.Type" Type="Str">relativeToCommon</Property>
 				<Property Name="PKG_packageName" Type="Str">ocv</Property>
-				<Property Name="PKG_publishToSystemLink" Type="Bool">true</Property>
+				<Property Name="PKG_publishToSystemLink" Type="Bool">false</Property>
 				<Property Name="PKG_section" Type="Str">Application Software</Property>
 				<Property Name="PKG_shortcuts.Count" Type="Int">0</Property>
 				<Property Name="PKG_sources.Count" Type="Int">2</Property>
 				<Property Name="PKG_sources[0].Destination" Type="Str">root_0</Property>
-				<Property Name="PKG_sources[0].ID" Type="Ref">/NI-PXIe-8840Quad-Core-031036AB/Build Specifications/My Real-Time Application</Property>
+				<Property Name="PKG_sources[0].ID" Type="Ref">/NI-PXIe-8821-032055AA/Build Specifications/My Real-Time Application</Property>
 				<Property Name="PKG_sources[0].Type" Type="Str">RTEXE Build</Property>
 				<Property Name="PKG_sources[1].Destination" Type="Str">root_3</Property>
-				<Property Name="PKG_sources[1].ID" Type="Ref">/NI-PXIe-8840Quad-Core-031036AB/ocv_labview_measurement_server.so</Property>
+				<Property Name="PKG_sources[1].ID" Type="Ref">/NI-PXIe-8821-032055AA/ocv_labview_measurement_server.so</Property>
 				<Property Name="PKG_sources[1].Type" Type="Str">File</Property>
 				<Property Name="PKG_synopsis" Type="Str">OCV</Property>
 				<Property Name="PKG_version" Type="Str">1.0.0</Property>
