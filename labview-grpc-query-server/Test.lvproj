@@ -1,7 +1,5 @@
 ﻿<?xml version='1.0' encoding='UTF-8'?>
 <Project Type="Project" LVVersion="19008000">
-	<Property Name="varPersistentID:{49533FDF-7BCE-4E2F-BB86-283DD9CFEA47}" Type="Ref">/NI-PXIe-8840Quad-Core-031036AB/SoftwareTrigger.lvlib/GUNSoftwareTrigger</Property>
-	<Property Name="varPersistentID:{5481D7F1-E825-4801-BA6C-096B401CAA67}" Type="Ref">/NI-PXIe-8840Quad-Core-031036AB/SoftwareTrigger.lvlib/DAQSoftwareTrigger</Property>
 	<Item Name="My Computer" Type="My Computer">
 		<Property Name="server.app.propertiesEnabled" Type="Bool">true</Property>
 		<Property Name="server.control.propertiesEnabled" Type="Bool">true</Property>
@@ -17,7 +15,7 @@
 	</Item>
 	<Item Name="NI-PXIe-8840Quad-Core-031036AB" Type="RT PXI Chassis">
 		<Property Name="alias.name" Type="Str">NI-PXIe-8840Quad-Core-031036AB</Property>
-		<Property Name="alias.value" Type="Str">169.254.17.129</Property>
+		<Property Name="alias.value" Type="Str">10.0.0.202</Property>
 		<Property Name="CCSymbols" Type="Str">TARGET_TYPE,RT;OS,Linux;CPU,x64;</Property>
 		<Property Name="host.ResponsivenessCheckEnabled" Type="Bool">true</Property>
 		<Property Name="host.ResponsivenessCheckPingDelay" Type="UInt">5000</Property>
@@ -93,14 +91,8 @@ AddOutputFilter chunkFilter
 		<Property Name="target.webservices.SecurityAPIKey" Type="Str">PqVr/ifkAQh+lVrdPIykXlFvg12GhhQFR8H9cUhphgg=:pTe9HRlQuMfJxAG6QCGq7UvoUpJzAzWGKy5SbZ+roSU=</Property>
 		<Property Name="target.webservices.ValidTimestampWindow" Type="Int">15</Property>
 		<Item Name="ExampleMeasurementServer.vi" Type="VI" URL="../ExampleMeasurementServer.vi"/>
-		<Item Name="OCV Histogram 4309.vi" Type="VI" URL="../OCV Histogram 4309.vi"/>
 		<Item Name="OCV Stream Asynchronous.vi" Type="VI" URL="../../OCV Stream Asynchronous.vi"/>
-		<Item Name="OCV_Chart_Graph_Mean_Range_StdDev.ctl" Type="VI" URL="../../OCV_Chart_Graph_Mean_Range_StdDev.ctl"/>
 		<Item Name="ocv_labview_measurement_server.so" Type="Document" URL="../ocv_labview_measurement_server.so"/>
-		<Item Name="Simulate Gatling Gun.vi" Type="VI" URL="../Simulate Gatling Gun.vi"/>
-		<Item Name="Simulate Send DAQ Trigger.vi" Type="VI" URL="../Simulate Send DAQ Trigger.vi"/>
-		<Item Name="SoftwareTrigger.lvlib" Type="Library" URL="../SoftwareTrigger.lvlib"/>
-		<Item Name="Trigger State.ctl" Type="VI" URL="../Trigger State.ctl"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="DAQmx Clear Task.vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/configure/task.llb/DAQmx Clear Task.vi"/>
@@ -251,15 +243,9 @@ AddOutputFilter chunkFilter
 				<Item Name="DAQmx Timing (Use Waveform).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/configure/timing.llb/DAQmx Timing (Use Waveform).vi"/>
 				<Item Name="DAQmx Timing.vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/configure/timing.llb/DAQmx Timing.vi"/>
 				<Item Name="Error Cluster From Error Code.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Error Cluster From Error Code.vi"/>
-				<Item Name="FormatTime String.vi" Type="VI" URL="/&lt;vilib&gt;/express/express execution control/ElapsedTimeBlock.llb/FormatTime String.vi"/>
-				<Item Name="NI_AALBase.lvlib" Type="Library" URL="/&lt;vilib&gt;/Analysis/NI_AALBase.lvlib"/>
-				<Item Name="NI_Gmath.lvlib" Type="Library" URL="/&lt;vilib&gt;/gmath/NI_Gmath.lvlib"/>
-				<Item Name="subElapsedTime.vi" Type="VI" URL="/&lt;vilib&gt;/express/express execution control/ElapsedTimeBlock.llb/subElapsedTime.vi"/>
 			</Item>
-			<Item Name="Chart_Graph_Mean_Range_StdDev.ctl" Type="VI" URL="../../Chart_Graph_Mean_Range_StdDev.ctl"/>
 			<Item Name="Global Operations.ctl" Type="VI" URL="../../Global Operations.ctl"/>
 			<Item Name="labview-grpc-measurement-server.lvlib" Type="Library" URL="../VIs/labview-grpc-measurement-server.lvlib"/>
-			<Item Name="lvanlys.dll" Type="Document" URL="/&lt;resource&gt;/lvanlys.dll"/>
 			<Item Name="nilvaiu.dll" Type="Document" URL="nilvaiu.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
@@ -267,9 +253,6 @@ AddOutputFilter chunkFilter
 			<Item Name="OCV Configure Acquisition.vi" Type="VI" URL="../OCV Configure Acquisition.vi"/>
 			<Item Name="OCV Measure.vi" Type="VI" URL="../OCV Measure.vi"/>
 			<Item Name="ocv_labview_measurement_server.so" Type="Document" URL="/home/lvuser/ocv_labview_measurement_server.so"/>
-			<Item Name="OCVResults.ctl" Type="VI" URL="../../OCVResults.ctl"/>
-			<Item Name="Simulate Angular Position.vi" Type="VI" URL="../Simulate Angular Position.vi"/>
-			<Item Name="Simulate Gun Software Trigger.vi" Type="VI" URL="../Simulate Gun Software Trigger.vi"/>
 			<Item Name="stopstream.vi" Type="VI" URL="../../stopstream.vi"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
@@ -289,7 +272,7 @@ AddOutputFilter chunkFilter
 				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
 				<Property Name="Bld_previewCacheID" Type="Str">{EFAE68E7-3ACA-4E03-B0EA-CC4C7321EBFB}</Property>
 				<Property Name="Bld_targetDestDir" Type="Path">/home/lvuser/natinst/bin</Property>
-				<Property Name="Bld_version.build" Type="Int">26</Property>
+				<Property Name="Bld_version.build" Type="Int">29</Property>
 				<Property Name="Bld_version.major" Type="Int">1</Property>
 				<Property Name="Destination[0].destName" Type="Str">startup.rtexe</Property>
 				<Property Name="Destination[0].path" Type="Path">/home/lvuser/natinst/bin/startup.rtexe</Property>
@@ -321,7 +304,7 @@ AddOutputFilter chunkFilter
 				<Property Name="TgtF_versionIndependent" Type="Bool">true</Property>
 			</Item>
 			<Item Name="OCV Package" Type="{CED73189-3D7D-4B2F-B6C9-EA03FBC59E14}">
-				<Property Name="IPK_lastBuiltPackage" Type="Str">ocv_1.0.0-9_x64.ipk</Property>
+				<Property Name="IPK_lastBuiltPackage" Type="Str">ocv_1.0.0-14_x64.ipk</Property>
 				<Property Name="IPK_startup.Restart" Type="Bool">true</Property>
 				<Property Name="IPK_startup.Target.Child" Type="Str">{53F90B9F-493D-4CD8-8BD1-B24EB007D9E8}</Property>
 				<Property Name="IPK_startup.Target.Destination" Type="Str">root_0</Property>
@@ -329,14 +312,14 @@ AddOutputFilter chunkFilter
 				<Property Name="PKG_actions.Count" Type="Int">0</Property>
 				<Property Name="PKG_autoIncrementBuild" Type="Bool">true</Property>
 				<Property Name="PKG_autoSelectDeps" Type="Bool">false</Property>
-				<Property Name="PKG_buildNumber" Type="Int">10</Property>
+				<Property Name="PKG_buildNumber" Type="Int">15</Property>
 				<Property Name="PKG_buildSpecName" Type="Str">OCV Package</Property>
 				<Property Name="PKG_dependencies.Count" Type="Int">0</Property>
 				<Property Name="PKG_description" Type="Str">This package runs the OCV test</Property>
 				<Property Name="PKG_destinations.Count" Type="Int">0</Property>
 				<Property Name="PKG_displayName" Type="Str">OCV Package</Property>
 				<Property Name="PKG_displayVersion" Type="Str"></Property>
-				<Property Name="PKG_feedDescription" Type="Str">This is a feed for the OCV test</Property>
+				<Property Name="PKG_feedDescription" Type="Str">This is a feed for the Open Circuit Voltage (OCV) test</Property>
 				<Property Name="PKG_feedName" Type="Str">OCV</Property>
 				<Property Name="PKG_homepage" Type="Str">www.ni.com</Property>
 				<Property Name="PKG_hostname" Type="Str">http://usauslt-sk4hx27:9092</Property>
@@ -344,7 +327,7 @@ AddOutputFilter chunkFilter
 				<Property Name="PKG_output" Type="Path">../builds/NI_AB_PROJECTNAME/NI_AB_TARGETNAME/OCV Package/Package</Property>
 				<Property Name="PKG_output.Type" Type="Str">relativeToCommon</Property>
 				<Property Name="PKG_packageName" Type="Str">ocv</Property>
-				<Property Name="PKG_publishToSystemLink" Type="Bool">false</Property>
+				<Property Name="PKG_publishToSystemLink" Type="Bool">true</Property>
 				<Property Name="PKG_section" Type="Str">Application Software</Property>
 				<Property Name="PKG_shortcuts.Count" Type="Int">0</Property>
 				<Property Name="PKG_sources.Count" Type="Int">2</Property>
