@@ -214,7 +214,7 @@ int main(int argc, char **argv)
     Status status = reader->Finish();
     cout << "Server notifications complete" << endl;
 */
-	auto iterations = client.Query("numiterations:1");
+	auto iterations = client.Query("numiterations:20");
     cout << "numiterations: " << iterations << endl;
 
     cout << "Performing OCV measurement" << endl;
