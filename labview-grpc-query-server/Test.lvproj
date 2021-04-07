@@ -13,9 +13,9 @@
 		<Item Name="Dependencies" Type="Dependencies"/>
 		<Item Name="Build Specifications" Type="Build"/>
 	</Item>
-	<Item Name="NI-PXIe-8840Quad-Core-031036AB" Type="RT PXI Chassis">
-		<Property Name="alias.name" Type="Str">NI-PXIe-8840Quad-Core-031036AB</Property>
-		<Property Name="alias.value" Type="Str">10.0.0.202</Property>
+	<Item Name="NI-PXIe-8821-0320C16A" Type="RT PXI Chassis">
+		<Property Name="alias.name" Type="Str">NI-PXIe-8821-0320C16A</Property>
+		<Property Name="alias.value" Type="Str">10.61.1.162</Property>
 		<Property Name="CCSymbols" Type="Str">TARGET_TYPE,RT;OS,Linux;CPU,x64;</Property>
 		<Property Name="host.ResponsivenessCheckEnabled" Type="Bool">true</Property>
 		<Property Name="host.ResponsivenessCheckPingDelay" Type="UInt">5000</Property>
@@ -286,11 +286,11 @@ AddOutputFilter chunkFilter
 				<Property Name="Source[0].itemID" Type="Str">{E1D36B62-76F3-4C19-823A-2F8DD423E63D}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[1].itemID" Type="Ref">/NI-PXIe-8840Quad-Core-031036AB/ExampleMeasurementServer.vi</Property>
+				<Property Name="Source[1].itemID" Type="Ref">/NI-PXIe-8821-0320C16A/ExampleMeasurementServer.vi</Property>
 				<Property Name="Source[1].sourceInclusion" Type="Str">TopLevel</Property>
 				<Property Name="Source[1].type" Type="Str">VI</Property>
 				<Property Name="Source[2].destinationIndex" Type="Int">1</Property>
-				<Property Name="Source[2].itemID" Type="Ref">/NI-PXIe-8840Quad-Core-031036AB/OCV Stream Asynchronous.vi</Property>
+				<Property Name="Source[2].itemID" Type="Ref">/NI-PXIe-8821-0320C16A/OCV Stream Asynchronous.vi</Property>
 				<Property Name="Source[2].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[2].type" Type="Str">VI</Property>
 				<Property Name="SourceCount" Type="Int">3</Property>
@@ -308,7 +308,7 @@ AddOutputFilter chunkFilter
 				<Property Name="IPK_startup.Restart" Type="Bool">true</Property>
 				<Property Name="IPK_startup.Target.Child" Type="Str">{53F90B9F-493D-4CD8-8BD1-B24EB007D9E8}</Property>
 				<Property Name="IPK_startup.Target.Destination" Type="Str">root_0</Property>
-				<Property Name="IPK_startup.Target.Source" Type="Ref">/NI-PXIe-8840Quad-Core-031036AB/Build Specifications/My Real-Time Application</Property>
+				<Property Name="IPK_startup.Target.Source" Type="Ref">/NI-PXIe-8821-0320C16A/Build Specifications/My Real-Time Application</Property>
 				<Property Name="PKG_actions.Count" Type="Int">0</Property>
 				<Property Name="PKG_autoIncrementBuild" Type="Bool">true</Property>
 				<Property Name="PKG_autoSelectDeps" Type="Bool">false</Property>
@@ -332,10 +332,10 @@ AddOutputFilter chunkFilter
 				<Property Name="PKG_shortcuts.Count" Type="Int">0</Property>
 				<Property Name="PKG_sources.Count" Type="Int">2</Property>
 				<Property Name="PKG_sources[0].Destination" Type="Str">root_0</Property>
-				<Property Name="PKG_sources[0].ID" Type="Ref">/NI-PXIe-8840Quad-Core-031036AB/Build Specifications/My Real-Time Application</Property>
+				<Property Name="PKG_sources[0].ID" Type="Ref">/NI-PXIe-8821-0320C16A/Build Specifications/My Real-Time Application</Property>
 				<Property Name="PKG_sources[0].Type" Type="Str">RTEXE Build</Property>
 				<Property Name="PKG_sources[1].Destination" Type="Str">root_3</Property>
-				<Property Name="PKG_sources[1].ID" Type="Ref">/NI-PXIe-8840Quad-Core-031036AB/ocv_labview_measurement_server.so</Property>
+				<Property Name="PKG_sources[1].ID" Type="Ref">/NI-PXIe-8821-0320C16A/ocv_labview_measurement_server.so</Property>
 				<Property Name="PKG_sources[1].Type" Type="Str">File</Property>
 				<Property Name="PKG_synopsis" Type="Str">OCV</Property>
 				<Property Name="PKG_version" Type="Str">1.0.0</Property>

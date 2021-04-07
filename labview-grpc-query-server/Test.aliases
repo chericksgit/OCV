@@ -2,8 +2,8 @@
 CifraRT = "10.0.0.59"
 
 [My Computer]
-My Computer = "172.21.181.129"
+My Computer = "172.27.177.49"
 
-[NI-PXIe-8840Quad-Core-031036AB]
-NI-PXIe-8840Quad-Core-031036AB = "10.0.0.202"
+[NI-PXIe-8821-0320C16A]
+NI-PXIe-8821-0320C16A = "10.61.1.162"
 
