@@ -219,7 +219,7 @@ int main(int argc, char **argv)
 	auto iterations = client.Query("numiterations:1");
     cout << "numiterations: " << iterations << endl;
 */
-/*    cout << "Performing OCV measurement" << endl;
+    cout << "Performing OCV measurement" << endl;
     {
         auto startTime = chrono::steady_clock::now();
         ClientContext ctx;
@@ -233,12 +233,23 @@ int main(int argc, char **argv)
         cout << "Received " << measurements.size() << " iterations of measurements." << endl;
         cout << "First Results: "  << endl;
         int x=0;
-        for (auto it = measurements.begin();  it != measurements.end(); ++it)
+		auto it = measurements.begin();
+		ErrorOut error_info = (*it).error();
+		//string error_words = error_info.errmessage();
+		string test_words = " hello";
+        /*
+		for (auto it = measurements.begin();  it != measurements.end(); it++)
         {
+			*/
+			cout << "  V0:" << measurements[0].battery24voltage() << endl;
+			cout << "  Error:" << error_info.errmessage() << endl;
+			cout << "  Error Message:" << error_words << endl;
+			cout << "  Test Message:" << test_words << endl;
+			cout << "  Error Code:" << error_info.errcode() << endl;
             cout << "  V1:" << (*it).battery1voltage() << " V2:" << (*it).battery2voltage() << " V3:" << (*it).battery3voltage() << " V4:" << (*it).battery4voltage() << " V5:" << (*it).battery5voltage() << " V6:" << (*it).battery6voltage() << endl;
 			cout << "  V7:" << (*it).battery7voltage() << " V8:" << (*it).battery8voltage() << " V9:" << (*it).battery9voltage() << " V10:" << (*it).battery10voltage() << " V11:" << (*it).battery11voltage() << " V12:" << (*it).battery12voltage() << endl;
 			cout << "  V13:" << (*it).battery13voltage() << " V14:" << (*it).battery14voltage() << " V15:" << (*it).battery15voltage() << " V16:" << (*it).battery16voltage() << " V17:" << (*it).battery17voltage() << " V18:" << (*it).battery18voltage() << endl;
-			cout << "  V19:" << (*it).battery19voltage() << " V20:" << (*it).battery20voltage() << " V21:" << (*it).battery21voltage() << " V22:" << (*it).battery22voltage() << " V23:" << (*it).battery23voltage() << " V24:" << (*it).battery24voltage() << endl;
+			cout << "  V19:" << (*it).battery19voltage() << " V20:" << (*it).battery20voltage() << " V21:" << (*it).battery21voltage() << " V22:" << (*it).battery22voltage() << " V23:" << (*it).battery24voltage() << " V24:" << (*it).battery23voltage() << endl;
             /*
 			if (++x == 10)
             {
@@ -246,8 +257,9 @@ int main(int argc, char **argv)
             }
 			
         }
-    }
-*/	
+    */
+	}
+	
 	/*
     cout << "Performing Streaming OCV measurement" << endl;
     {
