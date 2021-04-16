@@ -303,6 +303,19 @@ AddOutputFilter chunkFilter
 				<Property Name="TgtF_targetfileName" Type="Str">startup.rtexe</Property>
 				<Property Name="TgtF_versionIndependent" Type="Bool">true</Property>
 			</Item>
+			<Item Name="My Zip File" Type="Zip File">
+				<Property Name="Absolute[0]" Type="Bool">false</Property>
+				<Property Name="BuildName" Type="Str">My Zip File</Property>
+				<Property Name="Comments" Type="Str"></Property>
+				<Property Name="DestinationID[0]" Type="Str">{5A99A239-46C0-4E9C-A05F-FAD9697FE7ED}</Property>
+				<Property Name="DestinationItemCount" Type="Int">1</Property>
+				<Property Name="DestinationName[0]" Type="Str">Destination Directory</Property>
+				<Property Name="IncludedItemCount" Type="Int">1</Property>
+				<Property Name="IncludedItems[0]" Type="Ref">/NI-PXIe-8821-0320C16A</Property>
+				<Property Name="IncludeProject" Type="Bool">true</Property>
+				<Property Name="Path[0]" Type="Path">../../builds/Test/NI-PXIe-8821-0320C16A/My Zip File/Test.zip</Property>
+				<Property Name="ZipBase" Type="Str">NI_zipbasedefault</Property>
+			</Item>
 			<Item Name="OCV Package" Type="{CED73189-3D7D-4B2F-B6C9-EA03FBC59E14}">
 				<Property Name="IPK_lastBuiltPackage" Type="Str">ocv_1.0.0-16_x64.ipk</Property>
 				<Property Name="IPK_startup.Restart" Type="Bool">true</Property>
